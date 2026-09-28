@@ -1,23 +1,33 @@
 #include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
 
-// Lab 5 — Your Name
+// Lab 5 — Alonso Martinez 
 // CIS 5 Week 05 · Eligibility check
 
 int main() {
   int age = 0;
-  double gpa = 0.0;
+  double money = 0.0; 
+  
+  cout << "age? ";
+  cin  >> age; 
+  cout << "Money? ";
+  cin >> money;
+  
+  bool adult = age >= 21;
+  bool enough_money = money >= 50.50;
 
-  // TODO: cout question, then cin, for age and for gpa
-
-  // Thresholds: adult at 18, honors at 3.5 (change these and say why in a comment)
-  // TODO: bool adult = ...;
-  // TODO: bool honors = ...;
-
-  // TODO: if (adult && honors) { ... }        best case first
-  // TODO: else if (adult || honors) { ... }   exactly one requirement met
-  // TODO: else { ... }                        neither — the program still answers
-
-  // Edge values to run: 17 / 18 with a 3.8, and 3.4 / 3.5 with age 20
-
+  // adult is 21 since most gambling places are 21+ and money is $50.50 which is what is needed to gamble
+  
+  if (adult && enough_money) {
+    cout << "Go gamble!!!" << endl;
+  } else if (adult || enough_money) {
+    cout << "Not sure, maybe rethink your options " << endl;
+  } else  {
+    cout << "Stay home " << endl;
+  }
+  
+  
   return 0;
 }
